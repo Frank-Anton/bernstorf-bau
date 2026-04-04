@@ -160,12 +160,7 @@ p {
 }
 
 .site-logo img {
-    height: 50px;
-    width: auto;
-}
-
-.site-logo svg {
-    height: 50px;
+    height: 55px;
     width: auto;
 }
 
@@ -841,7 +836,8 @@ p {
 }
 
 .footer-col .footer-logo {
-    height: 40px;
+    height: 45px;
+    width: auto;
     margin-bottom: 1rem;
 }
 

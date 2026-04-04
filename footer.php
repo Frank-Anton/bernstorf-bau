@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.svg'); ?>" alt="<?php bloginfo('name'); ?>" class="footer-logo">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/bbau-logo-900x460.png'); ?>" alt="<?php bloginfo('name'); ?>" class="footer-logo">
                 <p>Ob Neubau, Umbau oder Sanierung &ndash; wir bieten Ihnen professionelle L&ouml;sungen aus einer Hand.</p>
             </div>
 

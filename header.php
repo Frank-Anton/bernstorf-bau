@@ -11,7 +11,7 @@
 <header class="site-header" id="site-header">
     <div class="container">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.svg'); ?>" alt="<?php bloginfo('name'); ?>">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/bbau-logo-900x460.png'); ?>" alt="<?php bloginfo('name'); ?>">
         </a>
 
         <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
