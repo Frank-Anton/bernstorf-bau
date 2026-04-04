@@ -170,6 +170,11 @@ add_action('init', 'bernstorf_register_projekte');
 require_once get_template_directory() . '/inc/contact-form.php';
 
 /**
+ * Theme Setup Wizard (erstellt Seiten, Menüs, Einstellungen)
+ */
+require_once get_template_directory() . '/inc/theme-setup-wizard.php';
+
+/**
  * Theme Customizer
  */
 function bernstorf_customizer($wp_customize) {
