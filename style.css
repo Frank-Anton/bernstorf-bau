@@ -836,9 +836,17 @@ p {
 }
 
 .footer-col .footer-logo {
-    height: 45px;
+    height: 70px;
     width: auto;
     margin-bottom: 1rem;
+}
+
+.footer-col p svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--color-primary);
+    vertical-align: middle;
+    margin-right: 0.25rem;
 }
 
 .footer-bottom {
