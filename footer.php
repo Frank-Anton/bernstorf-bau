@@ -32,11 +32,15 @@
             <div class="footer-col">
                 <h4>Kontakt</h4>
                 <?php
+                $owner   = get_theme_mod('bernstorf_owner', 'Christian Bernstorf');
                 $phone   = get_theme_mod('bernstorf_phone', '');
                 $email   = get_theme_mod('bernstorf_email', '');
                 $address = get_theme_mod('bernstorf_address', '');
                 $city    = get_theme_mod('bernstorf_city', '');
                 ?>
+                <?php if ($owner) : ?>
+                    <p><strong><?php echo esc_html($owner); ?></strong></p>
+                <?php endif; ?>
                 <?php if ($phone) : ?>
                     <p><?php echo bernstorf_icon('phone'); ?> <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', $phone)); ?>"><?php echo esc_html($phone); ?></a></p>
                 <?php endif; ?>

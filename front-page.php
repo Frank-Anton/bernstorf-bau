@@ -117,8 +117,9 @@ get_header();
                 <?php endif; ?>
             </div>
             <div class="about-teaser__content">
+                <?php $owner = get_theme_mod('bernstorf_owner', 'Christian Bernstorf'); ?>
                 <h2>&Uuml;ber Bernstorf Bau</h2>
-                <p>Hinter Bernstorf Bau steht <strong>Christian Bernstorf</strong> &ndash; Ihr direkter Ansprechpartner f&uuml;r alle Bauvorhaben in und um L&uuml;neburg. Als kleines, engagiertes Team setzen wir auf pers&ouml;nliche Betreuung, kurze Wege und saubere Arbeit.</p>
+                <p>Hinter Bernstorf Bau steht <strong><?php echo esc_html($owner); ?></strong> &ndash; Ihr direkter Ansprechpartner f&uuml;r alle Bauvorhaben in und um L&uuml;neburg. Als kleines, engagiertes Team setzen wir auf pers&ouml;nliche Betreuung, kurze Wege und saubere Arbeit.</p>
                 <p>Unsere Expertise reicht von Ab- und Durchbrucharbeiten bis hin zu Fassadensanierungen und Altbausanierungen.</p>
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('ueber-uns'))); ?>" class="btn btn--outline-dark">Mehr erfahren</a>
             </div>

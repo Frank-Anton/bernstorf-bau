@@ -185,6 +185,7 @@ function bernstorf_customizer($wp_customize) {
     ));
 
     $fields = array(
+        'owner'   => array('label' => 'Inhaber / Ansprechpartner', 'default' => 'Christian Bernstorf'),
         'phone'   => array('label' => 'Telefon', 'default' => ''),
         'email'   => array('label' => 'E-Mail', 'default' => ''),
         'address' => array('label' => 'Adresse', 'default' => ''),

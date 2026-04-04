@@ -21,6 +21,11 @@ get_header();
             <div class="contact-info">
                 <h3>So erreichen Sie uns</h3>
 
+                <?php $owner = get_theme_mod('bernstorf_owner', 'Christian Bernstorf'); ?>
+                <?php if ($owner) : ?>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Ihr Ansprechpartner:</strong><br><?php echo esc_html($owner); ?></p>
+                <?php endif; ?>
+
                 <?php $phone = get_theme_mod('bernstorf_phone', ''); ?>
                 <?php if ($phone) : ?>
                 <div class="contact-info__item">
