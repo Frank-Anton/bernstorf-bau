@@ -30,16 +30,18 @@ function bernstorf_run_setup() {
         'ueber-uns' => array(
             'title'    => 'Über uns',
             'template' => '',
-            'content'  => '<h2>Bernstorf Bau – Ihr Partner für Bau &amp; Sanierung</h2>
-<p>Wir sind ein junges, engagiertes Bauunternehmen mit Leidenschaft für Qualität und Handwerk. Als kleines Team von zwei Mann setzen wir auf persönliche Betreuung, kurze Wege und saubere Arbeit.</p>
+            'content'  => '<h2>Bernstorf Bau – Ihr Partner für Bau &amp; Sanierung in Lüneburg</h2>
+<p>Hinter Bernstorf Bau steht Christian Bernstorf – mit Leidenschaft für Qualität und Handwerk. Als kleines, engagiertes Team setzen wir auf persönliche Betreuung, kurze Wege und saubere Arbeit.</p>
 <p>Ob Neubau, Umbau oder Sanierung – wir bieten Ihnen professionelle Lösungen in den Bereichen Maurerarbeiten, Stahl- und Betonarbeiten, Trockenbau und vieles mehr. Unsere Expertise reicht von Ab- und Durchbrucharbeiten bis hin zu Fassadensanierungen und Altbausanierungen.</p>
+<h3>Ihr Ansprechpartner</h3>
+<p><strong>Christian Bernstorf</strong> – Inhaber und Ihr direkter Ansprechpartner für alle Bauvorhaben in und um Lüneburg.</p>
 <h3>Was uns auszeichnet</h3>
 <ul>
-<li>Persönliche Beratung und Betreuung</li>
+<li>Persönliche Beratung direkt vom Chef</li>
 <li>Faire und transparente Preise</li>
 <li>Termingerechte Ausführung</li>
 <li>Saubere und zuverlässige Arbeit</li>
-<li>Regionale Verbundenheit</li>
+<li>Regionale Verbundenheit in Lüneburg und Umgebung</li>
 </ul>',
         ),
         'projekte' => array(
@@ -57,12 +59,15 @@ function bernstorf_run_setup() {
             'template' => '',
             'content'  => '<p><strong>Angaben gemäß § 5 TMG:</strong></p>
 <p>Bernstorf Bau<br>
-[Vorname Nachname]<br>
+Christian Bernstorf<br>
 [Straße Nr.]<br>
-[PLZ Ort]</p>
+[PLZ] Lüneburg</p>
 <p><strong>Kontakt:</strong><br>
 Telefon: [Ihre Telefonnummer]<br>
 E-Mail: [Ihre E-Mail]</p>
+<p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+Christian Bernstorf<br>
+[Adresse wie oben]</p>
 <p><strong>Umsatzsteuer-ID:</strong><br>
 [Falls vorhanden]</p>
 <p><em>Bitte ergänzen Sie dieses Impressum mit Ihren vollständigen Angaben.</em></p>',
