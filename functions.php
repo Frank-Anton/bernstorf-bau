@@ -175,6 +175,11 @@ require_once get_template_directory() . '/inc/contact-form.php';
 require_once get_template_directory() . '/inc/theme-setup-wizard.php';
 
 /**
+ * Bilder-Importer (einmalig)
+ */
+require_once get_template_directory() . '/inc/import-projekte.php';
+
+/**
  * Theme Customizer
  */
 function bernstorf_customizer($wp_customize) {
