@@ -180,6 +180,16 @@ require_once get_template_directory() . '/inc/theme-setup-wizard.php';
 require_once get_template_directory() . '/inc/import-projekte.php';
 
 /**
+ * Projekte-Archiv: 12 pro Seite
+ */
+function bernstorf_projekte_per_page($query) {
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('projekt')) {
+        $query->set('posts_per_page', 12);
+    }
+}
+add_action('pre_get_posts', 'bernstorf_projekte_per_page');
+
+/**
  * Theme Customizer
  */
 function bernstorf_customizer($wp_customize) {
