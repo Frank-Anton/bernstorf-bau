@@ -124,8 +124,14 @@ function bernstorf_import_projekte() {
         }
 
         // Pruefen ob Projekt schon existiert
-        $existing = get_page_by_title($info['title'], OBJECT, 'projekt');
-        if ($existing) {
+        $existing_query = new WP_Query(array(
+            'post_type'      => 'projekt',
+            'title'          => $info['title'],
+            'posts_per_page' => 1,
+            'fields'         => 'ids',
+            'no_found_rows'  => true,
+        ));
+        if ($existing_query->have_posts()) {
             $log[] = "Projekt '{$info['title']}' existiert bereits - uebersprungen.";
             continue;
         }
@@ -235,6 +241,119 @@ function bernstorf_import_image($source_path, $parent_id = 0) {
 }
 
 /**
+ * Hero-Slides aus "Bilder Arbeit" anlegen
+ */
+function bernstorf_import_hero_slides() {
+    @set_time_limit(300);
+    require_once(ABSPATH . 'wp-admin/includes/file.php');
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
+    require_once(ABSPATH . 'wp-admin/includes/media.php');
+
+    $log = array();
+    $folder = 'H:/Bilder Arbeit';
+
+    if (!is_dir($folder)) {
+        $log[] = "FEHLER: Ordner 'Bilder Arbeit' nicht gefunden";
+        return $log;
+    }
+
+    // Pruefen ob schon Slides existieren
+    $existing = get_posts(array(
+        'post_type'      => 'hero_slide',
+        'posts_per_page' => 1,
+        'fields'         => 'ids',
+    ));
+
+    if (!empty($existing)) {
+        $log[] = "Hero-Slides existieren bereits - uebersprungen.";
+        return $log;
+    }
+
+    $files = glob($folder . '/*.{jpg,jpeg,png,JPG,JPEG,PNG}', GLOB_BRACE);
+    if (empty($files)) {
+        $log[] = "Keine Bilder in 'Bilder Arbeit'";
+        return $log;
+    }
+
+    sort($files);
+    $files = array_slice($files, 0, 5);
+
+    $titles = array(
+        'Bauen mit Leidenschaft',
+        'Sanierung aus einer Hand',
+        'Praezision im Detail',
+        'Ihr Partner in Lueneburg',
+        'Qualitaet die ueberzeugt',
+    );
+
+    $i = 0;
+    foreach ($files as $file) {
+        $slide_id = wp_insert_post(array(
+            'post_title'  => isset($titles[$i]) ? $titles[$i] : ('Hero Slide ' . ($i + 1)),
+            'post_status' => 'publish',
+            'post_type'   => 'hero_slide',
+            'menu_order'  => $i + 1,
+        ));
+
+        if (is_wp_error($slide_id) || !$slide_id) {
+            continue;
+        }
+
+        $attach_id = bernstorf_import_image($file, $slide_id);
+        if ($attach_id) {
+            set_post_thumbnail($slide_id, $attach_id);
+            $log[] = "Hero-Slide '{$titles[$i]}' angelegt.";
+        }
+        $i++;
+    }
+
+    return $log;
+}
+
+/**
+ * Bild fuer Ueber-uns-Seite setzen
+ */
+function bernstorf_import_about_image() {
+    @set_time_limit(120);
+    require_once(ABSPATH . 'wp-admin/includes/file.php');
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
+    require_once(ABSPATH . 'wp-admin/includes/media.php');
+
+    $log = array();
+    $about = get_page_by_path('ueber-uns');
+
+    if (!$about) {
+        $log[] = "Ueber-uns-Seite nicht gefunden";
+        return $log;
+    }
+
+    if (has_post_thumbnail($about->ID)) {
+        $log[] = "Ueber-uns hat bereits ein Beitragsbild - uebersprungen.";
+        return $log;
+    }
+
+    $folder = 'H:/Bilder Arbeit';
+    $files = glob($folder . '/*.{jpg,jpeg,png,JPG,JPEG,PNG}', GLOB_BRACE);
+
+    if (empty($files)) {
+        $log[] = "Kein Bild fuer Ueber-uns gefunden";
+        return $log;
+    }
+
+    sort($files);
+    // Bild Nr. 6 (nach den 5 Hero-Slides)
+    $file = isset($files[5]) ? $files[5] : $files[0];
+
+    $attach_id = bernstorf_import_image($file, $about->ID);
+    if ($attach_id) {
+        set_post_thumbnail($about->ID, $attach_id);
+        $log[] = "Beitragsbild fuer Ueber-uns gesetzt.";
+    }
+
+    return $log;
+}
+
+/**
  * Admin-Menue: Importer-Seite
  */
 function bernstorf_add_import_menu() {
@@ -255,7 +374,11 @@ function bernstorf_import_page() {
         <?php
         if (isset($_POST['bernstorf_run_import']) && check_admin_referer('bernstorf_import')) {
             echo '<div class="notice notice-info"><p>Import laeuft... bitte warten.</p></div>';
-            $log = bernstorf_import_projekte();
+            $log = array_merge(
+                bernstorf_import_projekte(),
+                bernstorf_import_hero_slides(),
+                bernstorf_import_about_image()
+            );
             echo '<div class="notice notice-success"><p><strong>Import abgeschlossen!</strong></p>';
             echo '<ul style="list-style:disc;padding-left:20px;">';
             foreach ($log as $line) {
@@ -264,9 +387,13 @@ function bernstorf_import_page() {
             echo '</ul></div>';
         } else {
             ?>
-            <p>Importiert die ersten 5 Bilder aus jedem Unterordner von <code>H:/</code> als Projekte mit Galerie.</p>
-            <p><strong>Quelle:</strong> H:/&lt;Kategorie&gt;/*.jpg</p>
-            <p>Bereits existierende Projekte werden uebersprungen.</p>
+            <p>Importiert:</p>
+            <ul style="list-style:disc;padding-left:20px;">
+                <li>Die ersten 5 Bilder aus jedem Unterordner von <code>H:/</code> als <strong>Projekte mit Galerie</strong></li>
+                <li>5 Bilder aus <code>H:/Bilder Arbeit</code> als <strong>Hero-Slides</strong></li>
+                <li>1 Bild aus <code>H:/Bilder Arbeit</code> als <strong>Beitragsbild fuer Ueber-uns</strong></li>
+            </ul>
+            <p>Bereits existierende Inhalte werden uebersprungen - du kannst den Import gefahrlos nochmal ausfuehren.</p>
             <form method="post" style="margin-top:1.5rem;">
                 <?php wp_nonce_field('bernstorf_import'); ?>
                 <input type="hidden" name="bernstorf_run_import" value="1">
