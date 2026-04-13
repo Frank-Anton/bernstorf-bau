@@ -4,10 +4,14 @@ Theme URI: https://bernstorf-bau.de
 Author: Bernstorf Bau
 Author URI: https://bernstorf-bau.de
 Description: Individuelles Theme für Bernstorf Bau - Ihr Partner für Maurerarbeiten, Sanierung und Neubau.
-Version: 1.0.0
+Version: 1.1.0
+Requires at least: 6.0
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bernstorf-bau
+GitHub Theme URI: Frank-Anton/bernstorf-bau
+Primary Branch: main
 */
 
 /* ==========================================================================
