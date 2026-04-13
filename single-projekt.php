@@ -20,12 +20,6 @@ get_header();
     <div class="container">
         <?php while (have_posts()) : the_post(); ?>
             <article id="projekt-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <?php if (has_post_thumbnail()) : ?>
-                    <div style="margin-bottom: 2rem; border-radius: 8px; overflow: hidden;">
-                        <?php the_post_thumbnail('large'); ?>
-                    </div>
-                <?php endif; ?>
-
                 <div class="entry-content">
                     <?php the_content(); ?>
                 </div>
