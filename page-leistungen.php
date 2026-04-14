@@ -43,6 +43,7 @@ get_header();
                         <p>Massive Wertbest&auml;ndigkeit und eine Optik, die auch nach Jahrzehnten &uuml;berzeugt.</p>
                     </div>
                 </div>
+                <?php $slider_images = bernstorf_slider_images(array('maurerarbeiten', 'neubau'), 8); include(locate_template('template-parts/image-slider.php')); ?>
             </article>
 
             <!-- Block 2: Sanierung & Altbau -->
@@ -69,6 +70,7 @@ get_header();
                         <p>Ein Haus mit Seele, das energetisch und technisch auf dem Stand von heute ist.</p>
                     </div>
                 </div>
+                <?php $slider_images = bernstorf_slider_images(array('sanierung'), 8); include(locate_template('template-parts/image-slider.php')); ?>
             </article>
 
             <!-- Block 3: Kellerabdichtung & Trockenlegung -->
@@ -95,6 +97,7 @@ get_header();
                         <p>Ein trockenes, gesundes Raumklima und ein langfristiger Schutz des Geb&auml;udewerts.</p>
                     </div>
                 </div>
+                <?php $slider_images = bernstorf_slider_images(array('sanierung'), 8); include(locate_template('template-parts/image-slider.php')); ?>
             </article>
 
             <!-- Block 4: Umbau, Anbau & Durchbrüche -->
@@ -121,6 +124,7 @@ get_header();
                         <p>Ein neues Wohngef&uuml;hl ohne die Sorgen eines kompletten Neubaus.</p>
                     </div>
                 </div>
+                <?php $slider_images = bernstorf_slider_images(array('maurerarbeiten', 'neubau'), 8); include(locate_template('template-parts/image-slider.php')); ?>
             </article>
 
         </div>

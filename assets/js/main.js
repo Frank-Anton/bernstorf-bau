@@ -178,6 +178,43 @@
     }
 
     /* =========================================================================
+       Image Slider (Leistungen-Seite)
+       ========================================================================= */
+
+    document.querySelectorAll('[data-slider]').forEach(function (slider) {
+        const track = slider.querySelector('[data-slider-track]');
+        const prevBtn = slider.querySelector('[data-slider-prev]');
+        const nextBtn = slider.querySelector('[data-slider-next]');
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        function getScrollAmount() {
+            const slide = track.querySelector('.image-slider__slide');
+            if (!slide) return 200;
+            const gap = parseFloat(getComputedStyle(track).gap) || 16;
+            return slide.offsetWidth + gap;
+        }
+
+        function updateButtons() {
+            const maxScroll = track.scrollWidth - track.clientWidth - 1;
+            prevBtn.disabled = track.scrollLeft <= 0;
+            nextBtn.disabled = track.scrollLeft >= maxScroll;
+        }
+
+        prevBtn.addEventListener('click', function () {
+            track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', function () {
+            track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+
+        track.addEventListener('scroll', updateButtons, { passive: true });
+        window.addEventListener('resize', updateButtons);
+        updateButtons();
+    });
+
+    /* =========================================================================
        Anchor Highlight (wenn Leistungen-Seite per Anker angesprungen wird)
        ========================================================================= */
 

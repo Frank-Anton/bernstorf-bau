@@ -3,7 +3,7 @@
  * Bernstorf Bau Theme Functions
  */
 
-define('BERNSTORF_VERSION', '1.6.0');
+define('BERNSTORF_VERSION', '1.7.0');
 
 /**
  * Theme Setup
@@ -239,6 +239,69 @@ function bernstorf_customizer($wp_customize) {
     }
 }
 add_action('customize_register', 'bernstorf_customizer');
+
+/**
+ * Helper: Bilder fuer Slider aus Projekten einer Kategorie sammeln
+ *
+ * @param array|string $category_slugs Slug(s) der projekt_kategorie
+ * @param int $limit Maximale Anzahl Bilder
+ * @return array Liste von ['src' => url, 'alt' => title]
+ */
+function bernstorf_slider_images($category_slugs, $limit = 10) {
+    $projects = get_posts(array(
+        'post_type'      => 'projekt',
+        'posts_per_page' => 20,
+        'tax_query'      => array(array(
+            'taxonomy' => 'projekt_kategorie',
+            'field'    => 'slug',
+            'terms'    => (array) $category_slugs,
+        )),
+        'orderby' => 'rand',
+    ));
+
+    $images = array();
+    $seen = array();
+
+    foreach ($projects as $project) {
+        // Featured Image zuerst
+        $thumb_id = get_post_thumbnail_id($project->ID);
+        if ($thumb_id && !isset($seen[$thumb_id])) {
+            $images[] = array(
+                'src'   => wp_get_attachment_image_url($thumb_id, 'large'),
+                'alt'   => get_the_title($project),
+                'title' => get_the_title($project),
+            );
+            $seen[$thumb_id] = true;
+        }
+
+        // Plus alle anderen Bilder des Projekts
+        $attachments = get_posts(array(
+            'post_type'      => 'attachment',
+            'post_parent'    => $project->ID,
+            'posts_per_page' => -1,
+            'post_mime_type' => 'image',
+            'orderby'        => 'menu_order',
+            'order'          => 'ASC',
+        ));
+
+        foreach ($attachments as $att) {
+            if (isset($seen[$att->ID])) {
+                continue;
+            }
+            $images[] = array(
+                'src'   => wp_get_attachment_image_url($att->ID, 'large'),
+                'alt'   => $att->post_title,
+                'title' => get_the_title($project),
+            );
+            $seen[$att->ID] = true;
+            if (count($images) >= $limit) {
+                break 2;
+            }
+        }
+    }
+
+    return array_slice($images, 0, $limit);
+}
 
 /**
  * Helper: Get theme SVG icon
