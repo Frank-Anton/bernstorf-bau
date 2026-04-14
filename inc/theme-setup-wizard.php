@@ -30,8 +30,10 @@ function bernstorf_run_setup() {
         'ueber-uns' => array(
             'title'    => 'Über uns',
             'template' => '',
-            'content'  => '<h2>Bernstorf Bau – Ihr Partner für Bau &amp; Sanierung in Lüneburg</h2>
-<p>Hinter Bernstorf Bau steht Christian Bernstorf – mit Leidenschaft für Qualität und Handwerk. Als kleines, engagiertes Team setzen wir auf persönliche Betreuung, kurze Wege und saubere Arbeit.</p>
+            'content'  => '<p class="about-slogan"><em>Für uns ist jedes Projekt Chefsache – im wahrsten Sinne.</em></p>
+
+<h2>Bernstorf Bau – Ihr Partner für Bau &amp; Sanierung in Lüneburg</h2>
+<p>Hinter Bernstorf Bau steht Christian Bernstorf – Maurer- und Betonbauermeister mit Leidenschaft für Qualität und Handwerk. Als kleines, engagiertes Team setzen wir auf persönliche Betreuung, kurze Wege und saubere Arbeit.</p>
 <p>Ob Neubau, Umbau oder Sanierung – wir bieten Ihnen professionelle Lösungen in den Bereichen Maurerarbeiten, Stahl- und Betonarbeiten, Trockenbau und vieles mehr. Unsere Expertise reicht von Ab- und Durchbrucharbeiten bis hin zu Fassadensanierungen und Altbausanierungen.</p>
 <h3>Ihr Ansprechpartner</h3>
 <p><strong>Christian Bernstorf</strong> – Inhaber und Ihr direkter Ansprechpartner für alle Bauvorhaben in und um Lüneburg.</p>
