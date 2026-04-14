@@ -4,7 +4,7 @@ Theme URI: https://bernstorf-bau.de
 Author: Bernstorf Bau
 Author URI: https://bernstorf-bau.de
 Description: Individuelles Theme für Bernstorf Bau - Ihr Partner für Maurerarbeiten, Sanierung und Neubau.
-Version: 1.4.0
+Version: 1.5.0
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -818,55 +818,113 @@ p {
     margin-bottom: 0.5rem;
 }
 
-/* Services Detail List */
+/* Leistung Blocks (Detailseite) */
 
-.services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.leistung-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
-.service-detail {
+.leistung-block {
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-primary);
+}
+
+.leistung-block__head {
     display: flex;
     gap: 1.5rem;
-    padding: 2rem;
-    background: var(--color-white);
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
-    transition: transform var(--transition);
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
-.service-detail:hover {
-    transform: translateY(-3px);
-}
-
-.service-detail__icon {
-    width: 50px;
-    height: 50px;
-    background: var(--color-light);
-    border-radius: 8px;
+.leistung-block__icon {
+    width: 64px;
+    height: 64px;
+    background: var(--color-primary);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
 
-.service-detail__icon svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--color-primary);
+.leistung-block__icon svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--color-white);
 }
 
-.service-detail h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.service-detail p {
-    font-size: 0.9rem;
+.leistung-block__label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: var(--color-text-light);
-    margin-bottom: 0;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.leistung-block__head h2 {
+    font-size: 1.75rem;
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.leistung-block__intro {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.leistung-block__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.leistung-info h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.leistung-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .leistung-block {
+        padding: 1.5rem;
+    }
+
+    .leistung-block__head {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .leistung-block__head h2 {
+        font-size: 1.4rem;
+    }
+
+    .leistung-block__grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
 }
 
 /* ==========================================================================

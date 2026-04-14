@@ -8,7 +8,7 @@ get_header();
 <div class="page-header">
     <div class="container">
         <h1>Unsere Leistungen</h1>
-        <p>Kompetenz und Qualit&auml;t in allen Bereichen des Bauhandwerks</p>
+        <p>Handwerk ohne Kompromisse &ndash; vom Fundament bis zur fertigen Fassade.</p>
         <div class="page-header__breadcrumb">
             <a href="<?php echo esc_url(home_url('/')); ?>">Startseite</a> &raquo; <span>Leistungen</span>
         </div>
@@ -17,86 +17,112 @@ get_header();
 
 <div class="section">
     <div class="container">
-        <div class="services-list">
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('wall'); ?></div>
-                <div>
-                    <h3>Maurerarbeiten</h3>
-                    <p>Fachgerechte Mauerwerksarbeiten f&uuml;r Neubau, Umbau und Sanierung. Wir erstellen tragende und nichttragende W&auml;nde mit h&ouml;chster Pr&auml;zision.</p>
-                </div>
-            </div>
+        <div class="leistung-blocks">
 
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('trowel'); ?></div>
-                <div>
-                    <h3>Putzarbeiten</h3>
-                    <p>Innen- und Au&szlig;enputz in verschiedenen Techniken und Qualit&auml;ten. Vom Grundputz bis zum dekorativen Oberputz.</p>
+            <!-- Block 1: Maurer- & Betonarbeiten -->
+            <article class="leistung-block" id="maurerarbeiten">
+                <div class="leistung-block__head">
+                    <div class="leistung-block__icon"><?php echo bernstorf_icon('wall'); ?></div>
+                    <div>
+                        <span class="leistung-block__label">Maurer- &amp; Betonarbeiten</span>
+                        <h2>Das Fundament f&uuml;r Generationen.</h2>
+                    </div>
                 </div>
-            </div>
+                <p class="leistung-block__intro">Ein Haus ist nur so gut wie sein Rohbau. Ob Sie ein neues Zuhause planen, eine Garage anbauen oder eine Grundst&uuml;cksmauer errichten m&ouml;chten &ndash; das Maurerhandwerk ist unsere Kernkompetenz. Wir arbeiten nach modernsten Standards und mit h&ouml;chster Ma&szlig;genauigkeit.</p>
+                <div class="leistung-block__grid">
+                    <div class="leistung-info">
+                        <h4>Unsere Leistungen</h4>
+                        <p>Neubau von Einfamilienh&auml;usern, Erstellung von Fundamenten, fachgerechtes Verblendmauerwerk (Klinker) und Betonarbeiten aller Art.</p>
+                    </div>
+                    <div class="leistung-info">
+                        <h4>Ihr Vorteil</h4>
+                        <p>Wir achten auf bauphysikalische Details wie korrekte Abdichtungen und saubere Anschl&uuml;sse. Das spart Ihnen sp&auml;ter &Auml;rger und Kosten bei den Folgegewerken.</p>
+                    </div>
+                    <div class="leistung-info">
+                        <h4>Das Ergebnis</h4>
+                        <p>Massive Wertbest&auml;ndigkeit und eine Optik, die auch nach Jahrzehnten &uuml;berzeugt.</p>
+                    </div>
+                </div>
+            </article>
 
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('repair'); ?></div>
-                <div>
-                    <h3>Sanierung</h3>
-                    <p>Umfassende Sanierungsarbeiten f&uuml;r Bestandsgeb&auml;ude. Wir bringen Ihre Immobilie auf den neuesten Stand.</p>
+            <!-- Block 2: Sanierung & Altbau -->
+            <article class="leistung-block" id="sanierung">
+                <div class="leistung-block__head">
+                    <div class="leistung-block__icon"><?php echo bernstorf_icon('repair'); ?></div>
+                    <div>
+                        <span class="leistung-block__label">Sanierung &amp; Altbau-Instandsetzung</span>
+                        <h2>Altes bewahren &ndash; mit modernem Verstand.</h2>
+                    </div>
                 </div>
-            </div>
+                <p class="leistung-block__intro">L&uuml;neburg lebt von seiner Geschichte, und wir lieben es, diese zu erhalten. Doch die Sanierung von Altbauten erfordert Erfahrung mit historischen Baustoffen und den Mut, moderne Technik behutsam zu integrieren. Wir retten marode Substanz und machen sie bewohnbar.</p>
+                <div class="leistung-block__grid">
+                    <div class="leistung-info">
+                        <h4>Unsere Leistungen</h4>
+                        <p>Fachgerechte Schornsteinsanierung, Instandsetzung von Mauerwerkssch&auml;den, energetische Modernisierung und Denkmalschutz-gerechte Arbeiten.</p>
+                    </div>
+                    <div class="leistung-info">
+                        <h4>Ihr Vorteil</h4>
+                        <p>Wir erkennen fr&uuml;hzeitig, was erhalten werden kann und was ersetzt werden muss. Das gibt Ihnen Planungssicherheit bei Ihrem Sanierungsprojekt.</p>
+                    </div>
+                    <div class="leistung-info">
+                        <h4>Das Ergebnis</h4>
+                        <p>Ein Haus mit Seele, das energetisch und technisch auf dem Stand von heute ist.</p>
+                    </div>
+                </div>
+            </article>
 
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('house'); ?></div>
-                <div>
-                    <h3>Neubau</h3>
-                    <p>Vom Fundament bis zur fertigen H&uuml;lle &ndash; wir begleiten Ihren Neubau mit fachlicher Kompetenz.</p>
+            <!-- Block 3: Kellerabdichtung & Trockenlegung -->
+            <article class="leistung-block" id="keller">
+                <div class="leistung-block__head">
+                    <div class="leistung-block__icon"><?php echo bernstorf_icon('shield'); ?></div>
+                    <div>
+                        <span class="leistung-block__label">Kellerabdichtung &amp; Trockenlegung</span>
+                        <h2>Wir machen Ihr Haus wieder gesund.</h2>
+                    </div>
                 </div>
-            </div>
+                <p class="leistung-block__intro">Feuchtigkeit im Keller ist der Albtraum jedes Hausbesitzers. Sie greift die Bausubstanz an und gef&auml;hrdet durch Schimmelbildung die Gesundheit. Wir finden die Ursache &ndash; ob dr&uuml;ckendes Grundwasser, defekte Rohre oder fehlende Horizontalsperren &ndash; und l&ouml;sen das Problem dauerhaft.</p>
+                <div class="leistung-block__grid">
+                    <div class="leistung-info">
+                        <h4>Unsere Leistungen</h4>
+                        <p>Au&szlig;enabdichtungen (KMB/Bitumen), Einbau von Horizontalsperren gegen aufsteigende Feuchtigkeit und professionelle Schimmelsanierung.</p>
+                    </div>
+                    <div class="leistung-info">
+                        <h4>Ihr Vorteil</h4>
+                        <p>Wir "doktern" nicht an den Symptomen herum, sondern setzen an der Wurzel an. Damit Ihr Keller wieder als Lager- oder Wohnraum nutzbar wird.</p>
+                    </div>
+                    <div class="leistung-info">
+                        <h4>Das Ergebnis</h4>
+                        <p>Ein trockenes, gesundes Raumklima und ein langfristiger Schutz des Geb&auml;udewerts.</p>
+                    </div>
+                </div>
+            </article>
 
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('building'); ?></div>
-                <div>
-                    <h3>Um- &amp; Anbau</h3>
-                    <p>Erweiterungen, Umbauten und r&auml;umliche Ver&auml;nderungen an Ihrem bestehenden Geb&auml;ude.</p>
+            <!-- Block 4: Umbau, Anbau & Durchbrüche -->
+            <article class="leistung-block" id="umbau">
+                <div class="leistung-block__head">
+                    <div class="leistung-block__icon"><?php echo bernstorf_icon('building'); ?></div>
+                    <div>
+                        <span class="leistung-block__label">Umbau, Anbau &amp; Durchbr&uuml;che</span>
+                        <h2>Mehr Platz f&uuml;r Ihre Pl&auml;ne.</h2>
+                    </div>
                 </div>
-            </div>
+                <p class="leistung-block__intro">Das Leben ver&auml;ndert sich: Die Kinder brauchen mehr Platz, das Home-Office zieht ein oder die K&uuml;che soll offen und modern werden. Wir schaffen den n&ouml;tigen Raum daf&uuml;r. Ein Wanddurchbruch oder ein Anbau klingt einfach, erfordert aber statisches Fachwissen und saubere Ausf&uuml;hrung.</p>
+                <div class="leistung-block__grid">
+                    <div class="leistung-info">
+                        <h4>Unsere Leistungen</h4>
+                        <p>Erstellung von T&uuml;r- und Fensterdurchbr&uuml;chen, Einbau von Stahltr&auml;gern, Erweiterung von Wohnfl&auml;chen durch Anbauten.</p>
+                    </div>
+                    <div class="leistung-info">
+                        <h4>Ihr Vorteil</h4>
+                        <p>Wir arbeiten extrem sauber und staubarm, damit der restliche Wohnbetrieb so wenig wie m&ouml;glich gest&ouml;rt wird.</p>
+                    </div>
+                    <div class="leistung-info">
+                        <h4>Das Ergebnis</h4>
+                        <p>Ein neues Wohngef&uuml;hl ohne die Sorgen eines kompletten Neubaus.</p>
+                    </div>
+                </div>
+            </article>
 
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('repair'); ?></div>
-                <div>
-                    <h3>Altbausanierung</h3>
-                    <p>Behutsame und fachgerechte Sanierung von Altbauten unter Ber&uuml;cksichtigung der Bausubstanz.</p>
-                </div>
-            </div>
-
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('shield'); ?></div>
-                <div>
-                    <h3>WDVS</h3>
-                    <p>W&auml;rmed&auml;mmverbundsysteme f&uuml;r energieeffizientes Wohnen und geringere Heizkosten.</p>
-                </div>
-            </div>
-
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('repair'); ?></div>
-                <div>
-                    <h3>Schornsteinsanierung</h3>
-                    <p>Professionelle Sanierung und Instandsetzung von Schornsteinen und Kaminen.</p>
-                </div>
-            </div>
-
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('shield'); ?></div>
-                <div>
-                    <h3>Schimmelsanierung</h3>
-                    <p>Ursachenforschung und nachhaltige Beseitigung von Schimmelbefall in Wohn- und Gewerber&auml;umen.</p>
-                </div>
-            </div>
-
-            <div class="service-detail">
-                <div class="service-detail__icon"><?php echo bernstorf_icon('shield'); ?></div>
-                <div>
-                    <h3>Kellerabdichtung</h3>
-                    <p>Fachgerechte Abdichtung von Kellern gegen dr&uuml;ckendes und nichtdr&uuml;ckendes Wasser.</p>
-                </div>
-            </div>
         </div>
     </div>
 </div>
