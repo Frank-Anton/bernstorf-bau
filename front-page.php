@@ -38,7 +38,7 @@ get_header();
 
     <div class="container">
         <div class="hero__content">
-            <h1>Ihr Partner f&uuml;r <span>Bau &amp; Sanierung</span></h1>
+            <h1>Ihr Maurer- &amp; <span>Betonbauermeister</span> in und um L&uuml;neburg</h1>
             <p>Ob Neubau, Umbau oder Sanierung &ndash; wir bieten Ihnen professionelle L&ouml;sungen in den Bereichen Maurerarbeiten, Putzarbeiten und vieles mehr.</p>
             <a href="<?php echo esc_url(get_permalink(get_page_by_path('kontakt'))); ?>" class="btn btn--primary">Jetzt anfragen</a>
             <a href="<?php echo esc_url(get_permalink(get_page_by_path('leistungen'))); ?>" class="btn btn--outline">Unsere Leistungen</a>
@@ -99,6 +99,13 @@ get_header();
                 <p>W&auml;rmed&auml;mmverbundsysteme f&uuml;r energieeffizientes Wohnen.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Slogan-Trenner -->
+<section class="slogan-banner">
+    <div class="container">
+        <p>Handwerk mit Herz und Verstand &ndash; f&uuml;r Projekte, die bleiben.</p>
     </div>
 </section>
 

@@ -4,7 +4,7 @@ Theme URI: https://bernstorf-bau.de
 Author: Bernstorf Bau
 Author URI: https://bernstorf-bau.de
 Description: Individuelles Theme für Bernstorf Bau - Ihr Partner für Maurerarbeiten, Sanierung und Neubau.
-Version: 1.1.0
+Version: 1.2.0
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -379,6 +379,44 @@ p {
 .btn--outline-dark:hover {
     background: var(--color-primary);
     color: var(--color-white);
+}
+
+/* ==========================================================================
+   Slogan Banner
+   ========================================================================== */
+
+.slogan-banner {
+    background: var(--color-text);
+    color: var(--color-white);
+    padding: 2.5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slogan-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color-primary);
+}
+
+.slogan-banner p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .slogan-banner p {
+        font-size: 1.15rem;
+    }
 }
 
 /* ==========================================================================
