@@ -149,7 +149,7 @@
        Scroll Animations (simple fade-in)
        ========================================================================= */
 
-    const animateElements = document.querySelectorAll('.service-card, .project-card, .service-detail, .about-teaser__image, .about-teaser__content');
+    const animateElements = document.querySelectorAll('.service-card, .project-card, .leistung-block, .about-teaser__image, .about-teaser__content');
 
     if (animateElements.length > 0 && 'IntersectionObserver' in window) {
         // Add initial hidden state
@@ -176,6 +176,25 @@
             observer.observe(el);
         });
     }
+
+    /* =========================================================================
+       Anchor Highlight (wenn Leistungen-Seite per Anker angesprungen wird)
+       ========================================================================= */
+
+    function highlightAnchorTarget() {
+        if (!window.location.hash) return;
+
+        const target = document.querySelector(window.location.hash);
+        if (!target || !target.classList.contains('leistung-block')) return;
+
+        target.classList.add('leistung-block--highlight');
+        setTimeout(function () {
+            target.classList.remove('leistung-block--highlight');
+        }, 2200);
+    }
+
+    window.addEventListener('load', highlightAnchorTarget);
+    window.addEventListener('hashchange', highlightAnchorTarget);
 
     /* =========================================================================
        Utility: Escape HTML

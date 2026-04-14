@@ -62,34 +62,39 @@ get_header();
             <p>Kompetenz und Qualit&auml;t in allen Bereichen des Bauhandwerks</p>
         </div>
 
+        <?php $leistungen_url = get_permalink(get_page_by_path('leistungen')); ?>
         <div class="services-grid services-grid--four">
-            <div class="service-card">
+            <a href="<?php echo esc_url($leistungen_url); ?>#maurerarbeiten" class="service-card">
                 <div class="service-card__icon"><?php echo bernstorf_icon('wall'); ?></div>
                 <h3>Maurerarbeiten</h3>
                 <p class="service-card__claim">Stein auf Stein f&uuml;r Generationen.</p>
                 <p>Egal ob Neubau, Umbau oder filigranes Verblendmauerwerk &ndash; wir mauern mit h&ouml;chster Pr&auml;zision und Verstand. Solides Handwerk ist unser Fundament.</p>
-            </div>
+                <span class="service-card__more">Mehr erfahren <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></span>
+            </a>
 
-            <div class="service-card">
+            <a href="<?php echo esc_url($leistungen_url); ?>#sanierung" class="service-card">
                 <div class="service-card__icon"><?php echo bernstorf_icon('repair'); ?></div>
                 <h3>Sanierung &amp; Altbau</h3>
                 <p class="service-card__claim">Altes bewahren, Modernes schaffen.</p>
                 <p>Wir retten Bausubstanz. Von der fachgerechten Schornsteinsanierung bis zur kompletten Modernisierung Ihres Altbaus: Wir machen Ihr Haus fit f&uuml;r die Zukunft.</p>
-            </div>
+                <span class="service-card__more">Mehr erfahren <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></span>
+            </a>
 
-            <div class="service-card">
+            <a href="<?php echo esc_url($leistungen_url); ?>#keller" class="service-card">
                 <div class="service-card__icon"><?php echo bernstorf_icon('shield'); ?></div>
                 <h3>Keller &amp; Feuchtigkeit</h3>
                 <p class="service-card__claim">Trockene Basis. Sicheres Gef&uuml;hl.</p>
                 <p>Schluss mit feuchten W&auml;nden. Wir sorgen f&uuml;r professionelle Kellerabdichtung und nachhaltige Schimmelsanierung. Wir legen Ihr Haus trocken &ndash; dauerhaft.</p>
-            </div>
+                <span class="service-card__more">Mehr erfahren <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></span>
+            </a>
 
-            <div class="service-card">
+            <a href="<?php echo esc_url($leistungen_url); ?>#umbau" class="service-card">
                 <div class="service-card__icon"><?php echo bernstorf_icon('building'); ?></div>
                 <h3>Umbau &amp; Anbau</h3>
                 <p class="service-card__claim">Raum f&uuml;r neue Pl&auml;ne.</p>
                 <p>Ihr Haus w&auml;chst mit Ihnen. Wir realisieren Durchbr&uuml;che, Anbauten und Grundriss&auml;nderungen sauber, schnell und fachgerecht.</p>
-            </div>
+                <span class="service-card__more">Mehr erfahren <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></span>
+            </a>
         </div>
     </div>
 </section>
