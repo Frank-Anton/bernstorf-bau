@@ -3,7 +3,7 @@
  * Bernstorf Bau Theme Functions
  */
 
-define('BERNSTORF_VERSION', '1.7.0');
+define('BERNSTORF_VERSION', '1.8.0');
 
 /**
  * Theme Setup
@@ -247,17 +247,22 @@ add_action('customize_register', 'bernstorf_customizer');
  * @param int $limit Maximale Anzahl Bilder
  * @return array Liste von ['src' => url, 'alt' => title]
  */
-function bernstorf_slider_images($category_slugs, $limit = 10) {
-    $projects = get_posts(array(
+function bernstorf_slider_images($category_slugs = array(), $limit = 10) {
+    $args = array(
         'post_type'      => 'projekt',
         'posts_per_page' => 20,
-        'tax_query'      => array(array(
+        'orderby'        => 'rand',
+    );
+
+    if (!empty($category_slugs)) {
+        $args['tax_query'] = array(array(
             'taxonomy' => 'projekt_kategorie',
             'field'    => 'slug',
             'terms'    => (array) $category_slugs,
-        )),
-        'orderby' => 'rand',
-    ));
+        ));
+    }
+
+    $projects = get_posts($args);
 
     $images = array();
     $seen = array();
