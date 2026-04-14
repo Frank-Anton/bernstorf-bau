@@ -39,9 +39,9 @@ get_header();
     <div class="container">
         <div class="hero__content">
             <h1>Ihr Maurer- &amp; <span>Betonbauermeister</span> in und um L&uuml;neburg</h1>
-            <p>Ob Neubau, Umbau oder Sanierung &ndash; wir bieten Ihnen professionelle L&ouml;sungen in den Bereichen Maurerarbeiten, Putzarbeiten und vieles mehr.</p>
-            <a href="<?php echo esc_url(get_permalink(get_page_by_path('kontakt'))); ?>" class="btn btn--primary">Jetzt anfragen</a>
-            <a href="<?php echo esc_url(get_permalink(get_page_by_path('leistungen'))); ?>" class="btn btn--outline">Unsere Leistungen</a>
+            <p>Handwerk, das bleibt. Pr&auml;zision aus L&uuml;neburg.</p>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('kontakt'))); ?>" class="btn btn--primary">Projekt anfragen</a>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('leistungen'))); ?>" class="btn btn--outline">Leistungen ansehen</a>
         </div>
     </div>
 
@@ -62,41 +62,33 @@ get_header();
             <p>Kompetenz und Qualit&auml;t in allen Bereichen des Bauhandwerks</p>
         </div>
 
-        <div class="services-grid">
+        <div class="services-grid services-grid--four">
             <div class="service-card">
                 <div class="service-card__icon"><?php echo bernstorf_icon('wall'); ?></div>
                 <h3>Maurerarbeiten</h3>
-                <p>Fachgerechte Mauerwerksarbeiten f&uuml;r Neubau und Bestand &ndash; zuverl&auml;ssig und pr&auml;zise.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-card__icon"><?php echo bernstorf_icon('trowel'); ?></div>
-                <h3>Putzarbeiten</h3>
-                <p>Innen- und Au&szlig;enputz f&uuml;r ein perfektes Finish Ihrer W&auml;nde und Fassaden.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-card__icon"><?php echo bernstorf_icon('house'); ?></div>
-                <h3>Neubau</h3>
-                <p>Von der Bodenplatte bis zum Dach &ndash; wir realisieren Ihr Bauprojekt.</p>
+                <p class="service-card__claim">Stein auf Stein f&uuml;r Generationen.</p>
+                <p>Egal ob Neubau, Umbau oder filigranes Verblendmauerwerk &ndash; wir mauern mit h&ouml;chster Pr&auml;zision und Verstand. Solides Handwerk ist unser Fundament.</p>
             </div>
 
             <div class="service-card">
                 <div class="service-card__icon"><?php echo bernstorf_icon('repair'); ?></div>
-                <h3>Sanierung</h3>
-                <p>Altbausanierung, Schimmelsanierung und Kellerabdichtung aus einer Hand.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-card__icon"><?php echo bernstorf_icon('building'); ?></div>
-                <h3>Um- &amp; Anbau</h3>
-                <p>Wir erweitern und ver&auml;ndern Ihre Immobilie nach Ihren W&uuml;nschen.</p>
+                <h3>Sanierung &amp; Altbau</h3>
+                <p class="service-card__claim">Altes bewahren, Modernes schaffen.</p>
+                <p>Wir retten Bausubstanz. Von der fachgerechten Schornsteinsanierung bis zur kompletten Modernisierung Ihres Altbaus: Wir machen Ihr Haus fit f&uuml;r die Zukunft.</p>
             </div>
 
             <div class="service-card">
                 <div class="service-card__icon"><?php echo bernstorf_icon('shield'); ?></div>
-                <h3>WDVS &amp; D&auml;mmung</h3>
-                <p>W&auml;rmed&auml;mmverbundsysteme f&uuml;r energieeffizientes Wohnen.</p>
+                <h3>Keller &amp; Feuchtigkeit</h3>
+                <p class="service-card__claim">Trockene Basis. Sicheres Gef&uuml;hl.</p>
+                <p>Schluss mit feuchten W&auml;nden. Wir sorgen f&uuml;r professionelle Kellerabdichtung und nachhaltige Schimmelsanierung. Wir legen Ihr Haus trocken &ndash; dauerhaft.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card__icon"><?php echo bernstorf_icon('building'); ?></div>
+                <h3>Umbau &amp; Anbau</h3>
+                <p class="service-card__claim">Raum f&uuml;r neue Pl&auml;ne.</p>
+                <p>Ihr Haus w&auml;chst mit Ihnen. Wir realisieren Durchbr&uuml;che, Anbauten und Grundriss&auml;nderungen sauber, schnell und fachgerecht.</p>
             </div>
         </div>
     </div>
@@ -125,9 +117,9 @@ get_header();
             </div>
             <div class="about-teaser__content">
                 <?php $owner = get_theme_mod('bernstorf_owner', 'Christian Bernstorf'); ?>
-                <h2>&Uuml;ber Bernstorf Bau</h2>
-                <p>Hinter Bernstorf Bau steht <strong><?php echo esc_html($owner); ?></strong> &ndash; Ihr direkter Ansprechpartner f&uuml;r alle Bauvorhaben in und um L&uuml;neburg. Als kleines, engagiertes Team setzen wir auf pers&ouml;nliche Betreuung, kurze Wege und saubere Arbeit.</p>
-                <p>Unsere Expertise reicht von Ab- und Durchbrucharbeiten bis hin zu Fassadensanierungen und Altbausanierungen.</p>
+                <h2>Meisterqualit&auml;t aus &Uuml;berzeugung</h2>
+                <p>Ich bin <strong><?php echo esc_html($owner); ?></strong>, Maurer- und Betonbauermeister. Mein Anspruch: Handwerk ohne Kompromisse.</p>
+                <p>In und um L&uuml;neburg stehe ich f&uuml;r Zuverl&auml;ssigkeit, saubere Baustellen und L&ouml;sungen, die technisch wie optisch &uuml;berzeugen. Bei mir bekommen Sie <strong>Beratung vom Chef und Qualit&auml;t vom Meister</strong>.</p>
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('ueber-uns'))); ?>" class="btn btn--outline-dark">Mehr erfahren</a>
             </div>
         </div>
@@ -185,8 +177,8 @@ get_header();
 <!-- CTA Section -->
 <section class="cta">
     <div class="container">
-        <h2>Haben Sie ein Bauprojekt?</h2>
-        <p>Kontaktieren Sie uns f&uuml;r eine kostenlose und unverbindliche Beratung. Wir freuen uns auf Ihr Projekt!</p>
+        <h2>Lust auf ein solides Projekt?</h2>
+        <p>Schreiben Sie mir oder rufen Sie direkt an &ndash; Beratung vom Chef, Qualit&auml;t vom Meister.</p>
         <a href="<?php echo esc_url(get_permalink(get_page_by_path('kontakt'))); ?>" class="btn btn--outline">Kontakt aufnehmen</a>
     </div>
 </section>

@@ -104,8 +104,8 @@ get_header();
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h2>Interesse an unseren Leistungen?</h2>
-        <p>Kontaktieren Sie uns f&uuml;r eine kostenlose Beratung und ein unverbindliches Angebot.</p>
+        <h2>Lust auf ein solides Projekt?</h2>
+        <p>Schreiben Sie mir oder rufen Sie direkt an &ndash; Beratung vom Chef, Qualit&auml;t vom Meister.</p>
         <a href="<?php echo esc_url(get_permalink(get_page_by_path('kontakt'))); ?>" class="btn btn--outline">Jetzt anfragen</a>
     </div>
 </section>
