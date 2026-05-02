@@ -3,7 +3,7 @@
  * Bernstorf Bau Theme Functions
  */
 
-define('BERNSTORF_VERSION', '1.9.0');
+define('BERNSTORF_VERSION', '1.10.0');
 
 /**
  * Theme Setup

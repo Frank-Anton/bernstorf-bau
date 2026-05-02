@@ -75,6 +75,7 @@ get_header();
 
                 <form id="bernstorf-contact-form" method="post">
                     <?php wp_nonce_field('bernstorf_contact_nonce', 'contact_nonce'); ?>
+                    <?php bernstorf_contact_time_trap_fields(); ?>
 
                     <div class="form-row">
                         <div class="form-group">
